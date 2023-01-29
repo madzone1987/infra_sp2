@@ -14,23 +14,14 @@ git clone git@github.com:madzone1987/infra_sp2.git
 cd infra_sp2/infra
 ```
 
-Cоздать создать файл ".env" и внести в него данные по шаблону, сохранить:
+Cоздать файл ".env" из шаблона, внести в него свои данные, сохранить:
+
+```
+mv .env.sample .env
+```
 
 ```
 nano .env
-```
-
-```
-# БД.
-DB_ENGINE=django.db.backends.postgresql       # указываем, что работаем с postgresql
-DB_HOST=db                                    # название сервиса (контейнера)
-DB_NAME=postgres                              # имя базы данных
-DB_PORT=5432                                  # порт для подключения к БД
-POSTGRES_PASSWORD=postgres                    # пароль для подключения к БД (установите свой)
-POSTGRES_USER=postgres                        # логин для подключения к базе данных
-
-# Джанго.
-SECRET_KEY = p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
 ```
 
 Запустить docker-compose:
@@ -59,68 +50,15 @@ docker-compose up -d
 http://localhost
 ```
 
-# Вы великолепны!
+Вы великолепны!
 
-### Некоторые примеры запросов к API:
+### Примеры запросов к API:
 
-_GET_ .../api/v1/categories/
-
-Пример ответа:
+С примерами запросов можно ознакомиться по адресу:
 
 ```
-{
-    "count": 3,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "name": "Фильм",
-            "slug": "movie"
-        },
-        ...
-    ]
-}
+http://localhost/redoc/
 ```
 
-_POST_ .../api/v1/titles/1/reviews/
-
-```
-{
-    "text": "Тест",
-    "score": 10
-}
-```
-
-Пример ответа:
-
-```
-{
-    "id": 1,
-    "text": "Тест",
-    "author": "admin",
-    "score": 10,
-    "pub_date": "2022-10-24T08:29:12.186741Z"
-}
-```
-
-_PATCH_ .../api/v1/titles/1/reviews/1/comments/1
-
-```
-{
-    "text": "Комментарий"
-}
-```
-
-Пример ответа:
-
-```
-{
-    "id": 1,
-    "text": "Комментарий",
-    "author": "admin",
-    "pub_date": "2022-10-24T09:04:42.770603Z"
-}
-```
-
-### Авторы
+### Авторы:
 Виталий Коршиков, Максим Костров, Павел Пестриков
