@@ -17,7 +17,7 @@ cd infra_sp2/infra
 Cоздать файл ".env" из шаблона, внести в него свои данные, сохранить:
 
 ```
-mv .env.sample .env
+cp .env.sample .env
 ```
 
 ```
