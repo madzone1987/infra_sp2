@@ -2,7 +2,7 @@
 git clone git@github.com:madzone1987/infra_sp2.git
 
 # Копируем файл .env.
-mv secret_information infra_sp2/infra/.env
+cp secret_information infra_sp2/infra/.env
 
 # Переходим в директорию infra.
 cd infra_sp2/infra
